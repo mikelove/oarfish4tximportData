@@ -8,4 +8,6 @@ coldata <- data.frame(
   names = c("r2","r3","r4"),
   rep = factor(2:4)
 )
-txi <- tximeta(coldata, type="oarfish", skipMeta=TRUE)
+library(SummarizedExperiment)
+se <- tximeta(coldata, type="oarfish", skipMeta=TRUE)
+colData(se)
