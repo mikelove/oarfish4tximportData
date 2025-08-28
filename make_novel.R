@@ -12,10 +12,10 @@ novel <- data.frame(
 names(novel) <- novel$id
 dna <- getSeq(Hsapiens, novel)
 
-n_counts <- alphabetFrequency(dna)[,"N"]
-table(n_counts > 0)
-
-dna_full <- dna[ n_counts == 0 ]
+# filter out N?
+#n_counts <- alphabetFrequency(dna)[,"N"]
+#table(n_counts > 0)
+#dna_full <- dna[ n_counts == 0 ]
 
 writeXStringSet(dna, filepath="novel.fa")
 R.utils::gzip("novel.fa")
